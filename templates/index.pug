@@ -1,0 +1,23 @@
+- let menu = ['English', 'EUR €', 'Find a teacher', 'Group Class', 'Community', 'Become a teacher', 'Log in', 'Sign up']
+- let languages = [{language: 'English', teachers: 5003}, {language: 'japanese', teachers: 988}, {language: 'Spanish', teachers: 2595}, {language: 'Chinese', teachers: 988}, {language: 'French', teachers: 1064}, {language: 'Italian', teachers: 7833}]
+
+doctype html
+html(lang="en")
+  head
+    title= Polygloty
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='main.css')
+  body
+    h1 Pug - node template engine
+    ul#menu
+      each item in menu
+        li= item
+
+    ul#languages
+      each item in languages
+        li
+          img(src=`/static/${item.language}.svg`)
+          div
+            span= item.language
+            span= `${item.teachers} teachers`
+
